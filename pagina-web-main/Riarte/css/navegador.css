@@ -1,0 +1,64 @@
+/* ===== NAVEGACIÓN ===== */
+
+/* Desktop: centrado absolutamente dentro del header */
+.navegador {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.navegador ul {
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
+    list-style: none;
+    padding: 6px 0 24px;
+}
+
+.navegador a {
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: x-large;
+    color: #5a3e1b;
+    transition: transform 0.2s ease, color 0.2s ease;
+    display: inline-block;
+    white-space: nowrap;
+}
+
+.navegador a:hover {
+    color: #a0522d;
+    transform: scale(1.15);
+}
+
+/* ===== RESPONSIVE NAVEGADOR ===== */
+@media (max-width: 768px) {
+    /* Ocupa toda la fila debajo del logo y carrito */
+    .navegador {
+        position: static;
+        transform: none;
+        width: 100%;
+        order: 3;
+    }
+
+    .navegador ul {
+        gap: 1.4rem;
+        padding: 8px 0 12px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .navegador a {
+        font-size: 0.95rem;
+        white-space: nowrap;
+    }
+}
+
+@media (max-width: 400px) {
+    .navegador ul {
+        gap: 0.8rem;
+    }
+
+    .navegador a {
+        font-size: 0.82rem;
+    }
+}

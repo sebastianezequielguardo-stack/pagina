@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tablas El Cóndor - Checkout</title>
+    <link rel="stylesheet" href="../css/estilos.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/navegador.css">
+    <link rel="stylesheet" href="../css/checkout.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <a href="/index.html">
+            <img src="/images/logo.webp" alt="Logo" class="logo-img">
+        </a>
+
+        <nav class="navegador">
+            <ul>
+                <li><a href="/pages/productos/productos.html">Productos</a></li>
+                <li><a href="/pages/nosotros.html">Nosotros</a></li>
+                <li><a href="/pages/contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+
+        <a href="/pages/carrito.html" class="carrito-link">
+            <img src="../images/carlog.webp" alt="carrito" class="carrito-img">
+            <span class="carrito-contador" id="carrito-contador">0</span>
+        </a>
+    </header>
+
+    <main>
+        <section class="checkout-hero">
+            <h2>Finalizar compra</h2>
+        </section>
+
+        <div class="checkout-layout">
+
+            <!-- FORMULARIO DE ENVÍO -->
+            <div class="checkout-formulario">
+                <h3 class="checkout-titulo">Forma de entrega</h3>
+
+                <div class="envio-opciones">
+                    <label class="envio-opcion">
+                        <input type="radio" name="envio" value="retiro" checked>
+                        <div class="envio-opcion-content">
+                            <div class="envio-opcion-header">
+                                <span class="envio-opcion-nombre">Retiro presencial</span>
+                                <span class="envio-opcion-precio">Gratis</span>
+                            </div>
+                            <p class="envio-opcion-direccion">Titanic 1840, Rafael Castillo</p>
+                            <p class="envio-opcion-descripcion">Podés retirar tu pedido en nuestro local de lunes a viernes de 9:00 a 18:00 hs.</p>
+                        </div>
+                    </label>
+
+                    <label class="envio-opcion">
+                        <input type="radio" name="envio" value="domicilio">
+                        <div class="envio-opcion-content">
+                            <div class="envio-opcion-header">
+                                <span class="envio-opcion-nombre">Envío a domicilio</span>
+                                <span class="envio-opcion-precio" id="envio-precio">Calcular</span>
+                            </div>
+                            <p class="envio-opcion-direccion">Vía Correo Argentino</p>
+                            <div class="codigo-postal-container" id="codigo-postal-container" style="display: none;">
+                                <input type="text" id="codigo-postal" placeholder="Código postal" maxlength="5" pattern="[0-9]*">
+                                <button id="btn-calcular-envio" class="btn-calcular">Calcular</button>
+                            </div>
+                            <p class="envio-mensaje" id="envio-mensaje"></p>
+                        </div>
+                    </label>
+                </div>
+
+                <!-- DATOS DE CONTACTO -->
+                <div class="datos-contacto">
+                    <h3 class="checkout-titulo">Datos de contacto</h3>
+                    <div class="form-grupo">
+                        <label for="nombre">Nombre completo</label>
+                        <input type="text" id="nombre" placeholder="Tu nombre">
+                    </div>
+                    <div class="form-grupo">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="tu@email.com">
+                    </div>
+                    <div class="form-grupo">
+                        <label for="telefono">Teléfono</label>
+                        <input type="tel" id="telefono" placeholder="11 1234 5678">
+                    </div>
+                </div>
+
+                <!-- DIRECCIÓN DE ENVÍO (solo para envío a domicilio) -->
+                <div class="datos-envio" id="datos-envio" style="display: none;">
+                    <h3 class="checkout-titulo">Dirección de envío</h3>
+                    <div class="form-grupo">
+                        <label for="calle">Calle y número</label>
+                        <input type="text" id="calle" placeholder="Ej: Av. Corrientes 1234">
+                    </div>
+                    <div class="form-grupo">
+                        <label for="piso">Piso/Departamento (opcional)</label>
+                        <input type="text" id="piso" placeholder="Ej: 3º A">
+                    </div>
+                    <div class="form-grupo">
+                        <label for="localidad">Localidad</label>
+                        <input type="text" id="localidad" placeholder="Ej: Buenos Aires">
+                    </div>
+                    <div class="form-grupo">
+                        <label for="provincia">Provincia</label>
+                        <input type="text" id="provincia" placeholder="Ej: Buenos Aires">
+                    </div>
+                </div>
+
+                <button class="btn-confirmar-compra" id="btn-confirmar">Confirmar compra</button>
+            </div>
+
+            <!-- RESUMEN DE COMPRA -->
+            <aside class="checkout-resumen">
+                <h3 class="resumen-titulo">Resumen de compra</h3>
+
+                <div class="resumen-productos" id="resumen-productos">
+                    <!-- Los productos se cargan dinámicamente -->
+                </div>
+
+                <div class="resumen-fila">
+                    <span>Subtotal</span>
+                    <span id="resumen-subtotal">$0</span>
+                </div>
+
+                <div class="resumen-fila" id="fila-envio" style="display: none;">
+                    <span>Envío</span>
+                    <span id="resumen-envio">$0</span>
+                </div>
+
+                <div class="resumen-divisor"></div>
+
+                <div class="resumen-fila resumen-total">
+                    <span>Total</span>
+                    <span id="resumen-total">$0</span>
+                </div>
+            </aside>
+
+        </div>
+    </main>
+
+   <footer>
+
+
+             <p>&copy; 2026 Tablas El Cóndor</p>
+
+
+
+       
+
+        <div class="footer-grid">
+
+            <div class="footer-brand">
+                <h4>Condorito</h4>
+                <p>>De la naturaleza a tu mesada..</p>
+            </div>
+            
+            <div>
+                <h5>Explorar</h5>
+                <ul>
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="/pages/productos/productos.html">Productos</a></li>
+                    <li><a href="/pages/nosotros.html">Nosotros</a></li>
+                    <li><a href="/pages/contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h5>Seguinos</h5>
+                <ul>
+                    <li><a href="https://www.instagram.com/tablaselcondor?igsh=Z2ZkdjkxanBiOWhl" target="_blank"><img src="/images/instagram.webp" alt="Instagram" class="instagram-logo"></a></li>
+                    <li><a href="https://www.facebook.com/share/19QZ3HHV6k/" target="_blank"><img src="/images/facebook.webp" alt="Facebook" class="facebook-logo"></a></li>
+                    <li><a href="https://wa.me/TU_NUMERO_WHATSAPP" target="_blank"><img src="/images/whatsapp.webp" alt="WhatsApp" class="whatsapp-logo"></a></li>
+                </ul>
+            </div>
+        </div>
+
+    </footer>
+
+    <script src="../js/checkout.js"></script>
+</body>
+</html>

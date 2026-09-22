@@ -1,0 +1,250 @@
+/* ===================================================
+   carrito.css — Tablas El Cóndor
+   =================================================== */
+
+.carrito-hero {
+    padding: 40px 40px 20px;
+}
+
+.carrito-hero h2 {
+    font-size: 28px;
+    color: #3b2a14;
+    font-weight: normal;
+}
+
+/* Layout: lista de productos + resumen lado a lado */
+.carrito-layout {
+    display: flex;
+    gap: 32px;
+    padding: 20px 40px 60px;
+    align-items: flex-start;
+}
+
+/* ---- LISTA DE PRODUCTOS ---- */
+.carrito-items {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.carrito-vacio {
+    text-align: center;
+    padding: 60px 20px;
+    color: #7a5c3a;
+    font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.btn-ver-productos {
+    display: inline-block;
+    padding: 10px 24px;
+    border: 2px solid #6b3e1a;
+    color: #6b3e1a;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    transition: background 0.2s, color 0.2s;
+}
+
+.btn-ver-productos:hover {
+    background: #6b3e1a;
+    color: #fdf3e3;
+}
+
+/* Cada producto en el carrito */
+.carrito-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: #fdf6ec;
+    border: 1px solid #e0c89a;
+    border-radius: 8px;
+    padding: 16px;
+}
+
+.carrito-item__img {
+    width: 100px;
+    height: 100px;
+    border-radius: 6px;
+    flex-shrink: 0;
+    background: #ede0cc;
+    overflow: hidden;
+}
+
+.carrito-item__img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.carrito-item__info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.carrito-item__nombre {
+    font-family: Georgia, serif;
+    font-size: 1rem;
+    color: #3b2a14;
+}
+
+.carrito-item__precio {
+    font-family: Georgia, serif;
+    font-size: 1rem;
+    color: #6b3e1a;
+    font-weight: bold;
+}
+
+.carrito-item__cantidad {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 4px;
+}
+
+.carrito-item__cantidad button {
+    width: 28px;
+    height: 28px;
+    border: 1px solid #c8a97e;
+    background: #fff9f2;
+    color: #3b2a14;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-cantidad:hover {
+    background: #e8d5b7;
+}
+
+.carrito-item__cantidad span {
+    font-size: 0.95rem;
+    color: #3b2a14;
+    min-width: 20px;
+    text-align: center;
+}
+
+.carrito-item__subtotal {
+    text-align: right;
+    flex-shrink: 0;
+}
+
+.carrito-item__subtotal p {
+    font-family: Georgia, serif;
+    font-size: 1rem;
+    color: #6b3e1a;
+    font-weight: bold;
+    margin: 0;
+}
+
+.btn-eliminar {
+    background: none;
+    border: 1px solid #b04a2a;
+    color: #b04a2a;
+    font-size: 0.85rem;
+    cursor: pointer;
+    padding: 6px 12px;
+    border-radius: 4px;
+    transition: background 0.2s, color 0.2s;
+    flex-shrink: 0;
+    font-family: Georgia, serif;
+}
+
+.btn-eliminar:hover {
+    background: #b04a2a;
+    color: #fff;
+}
+
+/* ---- RESUMEN DE COMPRA ---- */
+.carrito-resumen {
+    flex: 0 0 300px;
+    background: #fdf6ec;
+    border: 1px solid #e0c89a;
+    border-radius: 8px;
+    padding: 28px 24px;
+    position: sticky;
+    top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.resumen-titulo {
+    font-family: Georgia, serif;
+    font-size: 1.1rem;
+    font-weight: normal;
+    color: #3b2a14;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #c8944a;
+    margin: 0;
+}
+
+.resumen-fila {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.95rem;
+    color: #5a3e1b;
+}
+
+.resumen-divisor {
+    height: 1px;
+    background: #e0c89a;
+}
+
+.resumen-total {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #3b2a14;
+}
+
+.btn-comprar {
+    background: #6b3e1a;
+    color: #fdf3e3;
+    border: none;
+    border-radius: 5px;
+    padding: 14px;
+    font-family: Georgia, serif;
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-top: 6px;
+}
+
+.btn-comprar:hover {
+    background: #8b5e2a;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .carrito-layout {
+        flex-direction: column;
+        padding: 16px 16px 40px;
+    }
+
+    .carrito-resumen {
+        flex: none;
+        width: 100%;
+        position: static;
+    }
+
+    .carrito-hero {
+        padding: 28px 16px 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .carrito-item__img {
+        width: 70px;
+        height: 70px;
+    }
+}

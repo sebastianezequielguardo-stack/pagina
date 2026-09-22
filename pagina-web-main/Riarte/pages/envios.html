@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tablas El Cóndor - Envios</title>   
+    <link rel="stylesheet" href="../css/estilos.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/header.css">
+    
+</head>
+
+
+<body>
+<section class="shipping-section">
+    <h2>Cotizar Envío</h2>
+    
+    <form id="shippingForm">
+        <div class="form-group">
+            <label for="nombre">Nombre Completo</label>
+            <input type="text" id="nombre" required placeholder="Ej. Juan Pérez">
+        </div>
+
+        <div class="form-group">
+            <label for="direccion">Dirección de Entrega</label>
+            <input type="text" id="direccion" required placeholder="Calle, Número, Depto">
+        </div>
+
+        <div class="form-group">
+            <label for="codigoPostal">Código Postal</label>
+            <input type="text" id="codigoPostal" required placeholder="Ej. 1425">
+        </div>
+
+        <div class="form-group">
+            <label for="tipoEnvio">Tipo de Servicio</label>
+            <select id="tipoEnvio">
+                <option value="estandar">Estándar (3 a 5 días hábiles)</option>
+                <option value="express">Express (24 a 48 horas)</option>
+            </select>
+        </div>
+
+        <button type="submit" class="btn-submit">Calcular Costo</button>
+    </form>
+
+    <div id="resultCard" class="result-card" style="display: none;">
+        <h3>¡Cotización Lista, <span id="resNombre"></span>!</h3>
+        <p>Costo de envío: $<span id="resMonto"></span></p>
+    </div>
+    
+
+</section>
+
+
+</body>
+
+ <footer>
+
+
+             <p>&copy; 2026 Tablas El Cóndor</p>
+
+
+
+       
+
+        <div class="footer-grid">
+
+            <div class="footer-brand">
+                <h4>Condorito</h4>
+                <p>>De la naturaleza a tu mesada..</p>
+            </div>
+            
+            <div>
+                <h5>Explorar</h5>
+                <ul>
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="/pages/productos/productos.html">Productos</a></li>
+                    <li><a href="/pages/nosotros.html">Nosotros</a></li>
+                    <li><a href="/pages/contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h5>Seguinos</h5>
+                <ul>
+                    <li><a href="https://www.instagram.com/tablaselcondor?igsh=Z2ZkdjkxanBiOWhl" target="_blank"><img src="/images/instagram.webp" alt="Instagram" class="instagram-logo"></a></li>
+                    <li><a href="https://www.facebook.com/share/19QZ3HHV6k/" target="_blank"><img src="/images/facebook.webp" alt="Facebook" class="facebook-logo"></a></li>
+                    <li><a href="https://wa.me/TU_NUMERO_WHATSAPP" target="_blank"><img src="/images/whatsapp.webp" alt="WhatsApp" class="whatsapp-logo"></a></li>
+                </ul>
+            </div>
+        </div>
+
+    </footer>
+
+
+</body>
+</html>

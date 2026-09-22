@@ -1,0 +1,193 @@
+/*----------- Hero ----------*/
+.hero {
+    height: 100vh;
+    background: url("../imagenes/hero.webp") center/cover no-repeat;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.hero-content {
+    position: relative;
+    color: white;
+    max-width: 700px;
+    padding: 0 20px;
+}
+
+.hero h1 {
+    font-size: 5rem;
+    font-weight: 900;
+    letter-spacing: -2px;
+    margin-bottom: 1rem;
+    color: rgba(255,255,255,0.9);
+    padding-left: 0;
+}
+
+.hero p {
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    color: rgba(255,255,255,0.9);
+}
+/*----------- FIN Hero ----------*/
+
+/*----------- Boton ---------------*/
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    border: 2px solid white;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-size: 0.85rem;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: white;
+    color: #3b2a14;
+}
+/*------------ Fin Boton --------------*/
+
+/*contenedor*/
+.contenedor {
+    max-width: 98%;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+/*------------ Coleccion -------------*/
+.coleccion {
+    padding: 6rem 0;
+    background: #F5F1E8;
+}
+
+.coleccion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+}
+
+.explorar {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--neutral);
+}
+
+.explorar:hover {
+    color: var(--primary);
+}
+
+/* GRID PRODUCTOS */
+.grid-productos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.producto-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.producto img {
+    width: 100%;
+    aspect-ratio: 3/4;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    transition: transform 0.4s ease;
+}
+
+.producto:hover img {
+    transform: scale(1.05);
+}
+
+.producto h3 {
+    font-size: 0.85rem;
+    margin-bottom: 0.3rem;
+}
+
+.producto p {
+    font-size: 0.8rem;
+    color: var(--neutral);
+}
+
+/* ===== RESPONSIVE INDEX ===== */
+@media (max-width: 900px) {
+    .hero h1 {
+        font-size: 3.5rem;
+    }
+
+    .grid-productos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .coleccion {
+        padding: 4rem 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero {
+        height: 80vh;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+        letter-spacing: -1px;
+    }
+
+    .hero p {
+        font-size: 0.7rem;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.75rem;
+    }
+
+    .grid-productos {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .coleccion {
+        padding: 2.5rem 0;
+    }
+
+    .coleccion-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .contenedor {
+        padding: 0 16px;
+    }
+}
+
+@media (max-width: 380px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .grid-productos {
+        grid-template-columns: 1fr;
+    }
+}

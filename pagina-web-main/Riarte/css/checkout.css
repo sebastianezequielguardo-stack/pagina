@@ -1,0 +1,345 @@
+/* ===================================================
+   checkout.css — Tablas El Cóndor
+   =================================================== */
+
+.checkout-hero {
+    padding: 40px 40px 20px;
+}
+
+.checkout-hero h2 {
+    font-size: 28px;
+    color: #3b2a14;
+    font-weight: normal;
+}
+
+/* Layout: formulario + resumen lado a lado */
+.checkout-layout {
+    display: flex;
+    gap: 32px;
+    padding: 20px 40px 60px;
+    align-items: flex-start;
+}
+
+/* ---- FORMULARIO DE CHECKOUT ---- */
+.checkout-formulario {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.checkout-titulo {
+    font-family: Georgia, serif;
+    font-size: 1.2rem;
+    font-weight: normal;
+    color: #3b2a14;
+    margin: 0 0 16px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #c8944a;
+}
+
+/* --- OPCIONES DE ENVÍO --- */
+.envio-opciones {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.envio-opcion {
+    display: block;
+    cursor: pointer;
+}
+
+.envio-opcion input[type="radio"] {
+    display: none;
+}
+
+.envio-opcion-content {
+    border: 1px solid #e0c89a;
+    border-radius: 8px;
+    padding: 16px 18px;
+    background: #fff9f2;
+    transition: all 0.2s;
+}
+
+.envio-opcion input[type="radio"]:checked + .envio-opcion-content {
+    border-color: #6b3e1a;
+    background: #fdf6ec;
+    box-shadow: 0 0 0 2px rgba(107, 62, 26, 0.1);
+}
+
+.envio-opcion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.envio-opcion-nombre {
+    font-family: Georgia, serif;
+    font-size: 1rem;
+    color: #3b2a14;
+    font-weight: bold;
+}
+
+.envio-opcion-precio {
+    font-family: Georgia, serif;
+    font-size: 0.95rem;
+    color: #6b3e1a;
+    font-weight: bold;
+}
+
+.envio-opcion-direccion {
+    font-family: Georgia, serif;
+    font-size: 0.9rem;
+    color: #5a3e1b;
+    margin: 0 0 6px;
+}
+
+.envio-opcion-descripcion {
+    font-family: Georgia, serif;
+    font-size: 0.85rem;
+    color: #7a5c3a;
+    margin: 0;
+    font-style: italic;
+}
+
+.codigo-postal-container {
+    display: flex;
+    gap: 10px;
+    margin-top: 12px;
+}
+
+.codigo-postal-container input {
+    flex: 1;
+    padding: 10px 12px;
+    border: 1px solid #c8a97e;
+    border-radius: 4px;
+    background: #fff;
+    color: #3b2a14;
+    font-family: Georgia, serif;
+    font-size: 0.95rem;
+}
+
+.codigo-postal-container input:focus {
+    outline: none;
+    border-color: #6b3e1a;
+}
+
+.btn-calcular {
+    background: #6b3e1a;
+    color: #fdf3e3;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-family: Georgia, serif;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-calcular:hover {
+    background: #8b5e2a;
+}
+
+.envio-mensaje {
+    font-family: Georgia, serif;
+    font-size: 0.85rem;
+    color: #4a7c23;
+    margin: 8px 0 0;
+    font-weight: bold;
+}
+
+/* --- DATOS DE CONTACTO --- */
+.datos-contacto {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.form-grupo {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-grupo label {
+    font-family: Georgia, serif;
+    font-size: 0.9rem;
+    color: #3b2a14;
+    font-weight: bold;
+}
+
+.form-grupo input {
+    padding: 10px 12px;
+    border: 1px solid #c8a97e;
+    border-radius: 4px;
+    background: #fff;
+    color: #3b2a14;
+    font-family: Georgia, serif;
+    font-size: 0.95rem;
+}
+
+.form-grupo input:focus {
+    outline: none;
+    border-color: #6b3e1a;
+}
+
+/* --- DATOS DE ENVÍO --- */
+.datos-envio {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.btn-confirmar-compra {
+    background: #6b3e1a;
+    color: #fdf3e3;
+    border: none;
+    border-radius: 6px;
+    padding: 16px 24px;
+    font-family: Georgia, serif;
+    font-size: 1.1rem;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+    margin-top: 10px;
+}
+
+.btn-confirmar-compra:hover {
+    background: #8b5e2a;
+    transform: translateY(-2px);
+}
+
+.btn-confirmar-compra:active {
+    transform: translateY(0);
+}
+
+/* ---- RESUMEN DE COMPRA ---- */
+.checkout-resumen {
+    flex: 0 0 350px;
+    background: #fdf6ec;
+    border: 1px solid #e0c89a;
+    border-radius: 8px;
+    padding: 28px 24px;
+    position: sticky;
+    top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.resumen-titulo {
+    font-family: Georgia, serif;
+    font-size: 1.1rem;
+    font-weight: normal;
+    color: #3b2a14;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #c8944a;
+    margin: 0;
+}
+
+.resumen-productos {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.resumen-producto {
+    display: flex;
+    gap: 12px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #e0c89a;
+}
+
+.resumen-producto__img {
+    width: 60px;
+    height: 60px;
+    border-radius: 4px;
+    overflow: hidden;
+    flex-shrink: 0;
+    background: #ede0cc;
+}
+
+.resumen-producto__img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.resumen-producto__info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.resumen-producto__nombre {
+    font-family: Georgia, serif;
+    font-size: 0.9rem;
+    color: #3b2a14;
+    margin: 0;
+}
+
+.resumen-producto__cantidad {
+    font-family: Georgia, serif;
+    font-size: 0.85rem;
+    color: #5a3e1b;
+    margin: 0;
+}
+
+.resumen-producto__precio {
+    font-family: Georgia, serif;
+    font-size: 0.9rem;
+    color: #6b3e1a;
+    font-weight: bold;
+    margin: 0;
+}
+
+.resumen-fila {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.95rem;
+    color: #5a3e1b;
+}
+
+.resumen-divisor {
+    height: 1px;
+    background: #e0c89a;
+}
+
+.resumen-total {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #3b2a14;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .checkout-layout {
+        flex-direction: column;
+        padding: 16px 16px 40px;
+    }
+
+    .checkout-resumen {
+        flex: none;
+        width: 100%;
+        position: static;
+    }
+
+    .checkout-hero {
+        padding: 28px 16px 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .checkout-hero h2 {
+        font-size: 24px;
+    }
+
+    .envio-opcion-content {
+        padding: 14px 16px;
+    }
+}

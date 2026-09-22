@@ -1,0 +1,88 @@
+.contacto-hero {
+    text-align: center;
+    padding: 60px 20px 30px;
+}
+
+.contacto-hero h2 {
+    font-size: 36px;
+    color: #3b2a14;
+    margin-bottom: 10px;
+}
+
+.contacto-hero p {
+    font-size: 16px;
+    color: #7a5c3a;
+}
+
+/* Centra el formulario */
+.contacto-form-wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 20px 20px 60px;
+}
+
+.contacto-form {
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-group label {
+    font-size: 14px;
+    color: #5a3e1b;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+.form-group input,
+.form-group textarea {
+    background-color: #fdf6ee;
+    border: 1px solid #c8a97e;
+    border-radius: 6px;
+    padding: 12px 14px;
+    font-size: 15px;
+    font-family: Georgia, serif;
+    color: #3b2a14;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    width: 100%;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #8b5e2a;
+    box-shadow: 0 0 0 3px rgba(139, 94, 42, 0.12);
+}
+
+/* ===== RESPONSIVE CONTACTO ===== */
+@media (max-width: 600px) {
+    .contacto-hero {
+        padding: 36px 16px 20px;
+    }
+
+    .contacto-hero h2 {
+        font-size: 26px;
+    }
+
+    .contacto-hero p {
+        font-size: 14px;
+    }
+
+    .contacto-form-wrapper {
+        padding: 16px 16px 40px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        font-size: 16px; /* evita zoom automático en iOS */
+        padding: 10px 12px;
+    }
+}

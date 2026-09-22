@@ -1,0 +1,84 @@
+<h2>Solicitar Devolución</h2>
+    
+    <form id="returnForm">
+        <div class="form-group">
+            <label for="nombre">Nombre del Cliente</label>
+            <input type="text" id="nombre" required placeholder="Ej. Ana García">
+        </div>
+
+        <div class="form-group">
+            <label for="numeroPedido">Número de Pedido</label>
+            <input type="text" id="numeroPedido" required placeholder="Ej. #98765">
+        </div>
+
+        <div class="form-group">
+            <label for="motivo">¿Por qué deseas devolver el producto?</label>
+            <select id="motivo" required>
+                <option value="" disabled selected>Selecciona una opción</option>
+                <option value="defecto">El producto vino defectuoso o dañado</option>
+                <option value="talla_incorrecta">La talla/tamaño no es el correcto</option>
+                <option value="no_gusta">El producto no es lo que esperaba</option>
+                <option value="error_envio">Recibí un artículo incorrecto</option>
+                <option value="otro">Otro motivo</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="detalles">Detalles adicionales (opcional)</label>
+            <textarea id="detalles" rows="3" placeholder="Cuéntanos más sobre el problema..."></textarea>
+        </div>
+
+        <button type="submit" class="btn-submit">Procesar Devolución</button>
+    </form>
+
+    <div id="returnResultCard" class="result-card" style="display: none;">
+        <h3>¡Solicitud Recibida, <span id="resNombreReturn"></span>!</h3>
+        <p>Tu orden <span id="resPedido"></span> ha sido procesada.</p>
+        <p>Monto estimado a reembolsar: $<span id="resMontoReturn"></span></p>
+        
+            * El reembolso se aplicará tras validar el estado del producto.
+        </small>
+    </div>
+   <li><a href="../index.html">Inicio</a></li>
+</section>
+ <footer>
+
+
+             <p>&copy; 2026 Tablas El Cóndor</p>
+
+
+
+       
+
+        <div class="footer-grid">
+
+            <div class="footer-brand">
+                <h4>Condorito</h4>
+                <p>>De la naturaleza a tu mesada..</p>
+            </div>
+            
+            <div>
+                <h5>Explorar</h5>
+                <ul>
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="/pages/productos/productos.html">Productos</a></li>
+                    <li><a href="/pages/nosotros.html">Nosotros</a></li>
+                    <li><a href="/pages/contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h5>Seguinos</h5>
+                <ul>
+                    <li><a href="https://www.instagram.com/tablaselcondor?igsh=Z2ZkdjkxanBiOWhl" target="_blank"><img src="/images/instagram.webp" alt="Instagram" class="instagram-logo"></a></li>
+                    <li><a href="https://www.facebook.com/share/19QZ3HHV6k/" target="_blank"><img src="/images/facebook.webp" alt="Facebook" class="facebook-logo"></a></li>
+                    <li><a href="https://wa.me/TU_NUMERO_WHATSAPP" target="_blank"><img src="/images/whatsapp.webp" alt="WhatsApp" class="whatsapp-logo"></a></li>
+                </ul>
+            </div>
+        </div>
+
+    </footer>
+
+
+</body>
+</html>

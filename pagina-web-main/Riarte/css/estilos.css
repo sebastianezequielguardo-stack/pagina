@@ -1,0 +1,77 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+}
+
+html {
+    scrollbar-gutter: stable;
+}
+
+body {
+    background-color: #f5efe6;
+    line-height: 1;
+    font-family: Georgia, serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    padding-left: 20px;
+    font-size: 24px;
+    color: #3b2a14;
+    text-align: left;
+}
+
+/* ===== MAIN ===== */
+main {
+    padding: 0;
+    margin: 0;
+    flex: 1;
+    max-width: 100%;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+section h2 {
+    font-size: 28px;
+    color: #3b2a14;
+    margin-bottom: 16px;
+}
+
+section img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+    margin: 0 auto;
+}
+
+h1, h2, h3, h4, h5, p, li, a, label, span,
+header, nav, footer, aside, button,
+.filtros-titulo, .filtro-grupo__titulo,
+.producto-card__nombre, .producto-card__precio,
+.footer-brand, .footer-grid, .filtro-grupo {
+    cursor: default;
+}
+
+a, button {
+    cursor: pointer;
+}
+
+/* ===== RESPONSIVE GLOBAL ===== */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 18px;
+        padding-left: 12px;
+    }
+}

@@ -1,0 +1,89 @@
+footer {
+    min-height: 120px;
+    text-align: center;
+    padding: 30px;
+    background-color: #e8d5b7;
+    color: #5a3e1b;
+    font-size: 18px;
+    margin-top: 0;
+}
+
+footer > p {
+    margin-bottom: 20px;
+    font-family: 'Playfair Display', serif;
+}
+
+.footer-brand {
+    text-align: left;
+}
+
+.footer-brand p {
+    font-size: 0.85rem;
+    max-width: 200px;
+}
+
+.footer-grid h5 {
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+/* Desktop: diseño original con gap grande */
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 100%;
+    padding: 0 60px;
+    text-align: center;
+}
+
+.footer-grid ul {
+    list-style: none;
+}
+
+.footer-grid li {
+    margin-bottom: 3px;
+}
+
+.footer-grid a {
+    text-decoration: none;
+    color: #4A2E1B;
+}
+
+.whatsapp-logo,
+.instagram-logo,
+.facebook-logo {
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+    margin-left: 5px;
+}
+
+/* ===== RESPONSIVE FOOTER ===== */
+
+/* Tablet: achico el gap para que no desborde */
+@media (max-width: 900px) {
+    .footer-grid {
+        grid-template-columns: repeat(3, auto);
+        gap: 3rem;
+        justify-content: center;
+    }
+}
+
+/* Mobile: columna única, alineado a la izquierda */
+@media (max-width: 600px) {
+    footer {
+        padding: 24px 12px;
+        font-size: 13px;
+    }
+
+    .footer-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+        text-align: left;
+        justify-items: start;
+    }
+
+    .footer-brand p {
+        max-width: 100%;
+    }
+}
