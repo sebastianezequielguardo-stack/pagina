@@ -82,6 +82,9 @@ function cargarCarrito() {
 
     actualizarResumen(total);
     agregarEventosCarrito(carrito);
+    if (window.actualizarContadorCarrito) {
+        window.actualizarContadorCarrito();
+    }
 }
 
 // ============================================
@@ -114,6 +117,9 @@ function agregarEventosCarrito(carrito) {
             carrito[index].cantidad += 1;
             guardarCarrito(carrito);
             cargarCarrito();
+            if (window.actualizarContadorCarrito) {
+                window.actualizarContadorCarrito();
+            }
         });
     });
 
@@ -125,6 +131,9 @@ function agregarEventosCarrito(carrito) {
                 carrito[index].cantidad -= 1;
                 guardarCarrito(carrito);
                 cargarCarrito();
+                if (window.actualizarContadorCarrito) {
+                    window.actualizarContadorCarrito();
+                }
             }
         });
     });
@@ -136,6 +145,9 @@ function agregarEventosCarrito(carrito) {
             carrito.splice(index, 1);
             guardarCarrito(carrito);
             cargarCarrito();
+            if (window.actualizarContadorCarrito) {
+                window.actualizarContadorCarrito();
+            }
         });
     });
 }

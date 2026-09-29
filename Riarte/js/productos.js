@@ -29,7 +29,7 @@ const productos = [
         precio: 40000,
         madera: "guayubira",
         tabla: "asado",
-        imagen: "/images/asado grande guayubira.webp",
+        imagen: "../images/asado grande guayubira.webp",
         descripcion: "Tabla de asado grande ideal para cortar carnes y servir. Hecha de madera de guayubira resistente y duradera. Medidas 50x30 cm."
     },
     {
@@ -38,7 +38,7 @@ const productos = [
         precio: 35000,
         madera: "guayubira",
         tabla: "asado",
-        imagen: "/images/asado chico guayubira.webp",
+        imagen: "../images/asado chico guayubira.webp",
         descripcion: "Tabla de asado tamaño mediano perfecta para asados familiares. Madera de guayubira de alta calidad. Medidas 40x30 cm."
     },
     {
@@ -47,7 +47,7 @@ const productos = [
         precio: 20000,
         madera: "guayubira",
         tabla: "cocina",
-        imagen: "/images/cocina guayubira.webp",
+        imagen: "../images/cocina guayubira.webp",
         descripcion: "Tabla de cocina versátil para preparación diaria. Madera de guayubira resistente a humedad. Medidas 40x25 cm."
     },
     {
@@ -56,7 +56,7 @@ const productos = [
         precio: 20000,
         madera: "guayubira",
         tabla: "cocina",
-        imagen: "/images/cocina guayubira cuelga.webp",
+        imagen: "../images/cocina guayubira cuelga.webp",
         descripcion: "Tabla de cocina con agujero para colgar, ideal para ahorrar espacio. Madera de guayubira premium. Medidas 40x25 cm."
     },
     {
@@ -65,7 +65,7 @@ const productos = [
         precio: 15000,
         madera: "eucalipto",
         tabla: "cocina",
-        imagen: "/images/",
+        imagen: "../images/",
         descripcion: "Tabla de cocina económica y funcional. Madera de eucalipto tratada. Medidas 40x25 cm."
     },
     {
@@ -74,7 +74,7 @@ const productos = [
         precio: 15000,
         madera: "eucalipto",
         tabla: "cocina",
-        imagen: "/images/",
+        imagen: "../images/",
         descripcion: "Tabla de cocina colgable de eucalipto. Perfecta para cocinas pequeñas. Medidas 40x25 cm."
     },
     {
@@ -83,7 +83,7 @@ const productos = [
         precio: 20000,
         madera: "eucalipto",
         tabla: "asado",
-        imagen: "/images/productos/picada-eucalipto.webp",
+        imagen: "../images/productos/picada-eucalipto.webp",
         descripcion: "Tabla de asado compacta de eucalipto. Ideal para asados íntimos. Medidas 40x30 cm."
     },
     {
@@ -92,7 +92,7 @@ const productos = [
         precio: 25000,
         madera: "eucalipto",
         tabla: "asado",
-        imagen: "/images/asado grande eucalipto.webp",
+        imagen: "../images/asado grande eucalipto.webp",
         descripcion: "Tabla de asado grande de eucalipto resistente. Perfecta para cortes grandes de carne. Medidas 50x30 cm."
     },
     {
@@ -101,7 +101,7 @@ const productos = [
         precio: 25000,
         madera: "eucalipto",
         tabla: "picada",
-        imagen: "/images/picada eucalipto.webp",
+        imagen: "../images/picada eucalipto.webp",
         descripcion: "Tabla alargada ideal para picadas y aperitivos. Madera de eucalipto de calidad. Medidas 50x17 cm."
     },
      {
@@ -110,7 +110,7 @@ const productos = [
         precio: 8000,
         madera: "eucalipto",
         tabla: "plato",
-        imagen: "/images/plato eucalipto.webp",
+        imagen: "../images/plato eucalipto.webp",
         descripcion: "Plato de madera cuadrado ideal para servir. Madera de eucalipto tratada. Medidas 25x25 cm."
     }
     // Agregá acá el resto de tus productos, con la misma estructura
@@ -200,15 +200,15 @@ function renderProductos(lista) {
 //               la variable del producto actual.
 function abrirModal(producto) {
     productoActual = producto;
-    modalImg.src = producto.imagen;
-    modalImg.alt = producto.nombre;
-    modalTitulo.textContent = producto.nombre;
-    modalPrecio.textContent = `$${producto.precio.toLocaleString("es-AR")}`;
-    modalDescripcion.textContent = producto.descripcion;
-    modalMadera.textContent = producto.madera.charAt(0).toUpperCase() + producto.madera.slice(1);
-    modalTipo.textContent = producto.tabla.charAt(0).toUpperCase() + producto.tabla.slice(1);
+    if (modalImg) modalImg.src = producto.imagen;
+    if (modalImg) modalImg.alt = producto.nombre;
+    if (modalTitulo) modalTitulo.textContent = producto.nombre;
+    if (modalPrecio) modalPrecio.textContent = `$${producto.precio.toLocaleString("es-AR")}`;
+    if (modalDescripcion) modalDescripcion.textContent = producto.descripcion;
+    if (modalMadera) modalMadera.textContent = producto.madera.charAt(0).toUpperCase() + producto.madera.slice(1);
+    if (modalTipo) modalTipo.textContent = producto.tabla.charAt(0).toUpperCase() + producto.tabla.slice(1);
 
-    modal.style.display = "block";
+    if (modal) modal.style.display = "block";
     document.body.style.overflow = "hidden"; // Evitar scroll del body
 }
 
@@ -219,14 +219,18 @@ function cerrarModal() {
 }
 
 // Evento para cerrar modal con el botón X
-modalClose.addEventListener("click", cerrarModal);
+if (modalClose) {
+    modalClose.addEventListener("click", cerrarModal);
+}
 
 // Evento para cerrar modal haciendo clic fuera del contenido
-window.addEventListener("click", (e) => {
-    if (e.target === modal) {
-        cerrarModal();
-    }
-});
+if (modal) {
+    window.addEventListener("click", (e) => {
+        if (e.target === modal) {
+            cerrarModal();
+        }
+    });
+}
 
 // Evento para cerrar con tecla ESC
 document.addEventListener("keydown", (e) => {
@@ -280,18 +284,22 @@ function agregarAlCarrito() {
     actualizarContadorCarrito();
 
     // Mostrar confirmación visual
-    const btnOriginal = btnAgregarCarrito.textContent;
-    btnAgregarCarrito.textContent = "¡Agregado!";
-    btnAgregarCarrito.style.background = "#4a7c23";
+    if (btnAgregarCarrito) {
+        const btnOriginal = btnAgregarCarrito.textContent;
+        btnAgregarCarrito.textContent = "¡Agregado!";
+        btnAgregarCarrito.style.background = "#4a7c23";
 
-    setTimeout(() => {
-        btnAgregarCarrito.textContent = btnOriginal;
-        btnAgregarCarrito.style.background = "#6b3e1a";
-    }, 1500);
+        setTimeout(() => {
+            btnAgregarCarrito.textContent = btnOriginal;
+            btnAgregarCarrito.style.background = "#6b3e1a";
+        }, 1500);
+    }
 }
 
 // Evento para agregar al carrito
-btnAgregarCarrito.addEventListener("click", agregarAlCarrito);
+if (btnAgregarCarrito) {
+    btnAgregarCarrito.addEventListener("click", agregarAlCarrito);
+}
 
 // ============================================
 // 6. FILTRAR PRODUCTOS
@@ -350,8 +358,12 @@ function resetearFiltros() {
 // - Tecla Enter en los campos de precio: también filtra (para comodidad del usuario)
 //
 // Esto hace que la página sea interactiva y responda a las acciones del usuario.
-btnAplicar.addEventListener("click", aplicarFiltros);
-btnReset.addEventListener("click", resetearFiltros);
+if (btnAplicar) {
+    btnAplicar.addEventListener("click", aplicarFiltros);
+}
+if (btnReset) {
+    btnReset.addEventListener("click", resetearFiltros);
+}
 
 // Aplicar filtros al apretar Enter en cualquier campo de filtro
 // (no están dentro de un <form>, así que el Enter no hace nada por defecto)
